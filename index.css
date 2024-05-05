@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+body {
+    background-color: var(--Very-Light-Gray);
+    color: var(--Grayish-Blue);
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 490px;
+    text-align: center;
+
+    padding: 20px 10px;
+}
+
+main {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-auto-flow: column;
+
+    min-width: 700px;
+    max-width: 1000px;
+}
+
+main>div {
+    background-color: #fff;
+    grid-area: span 2 / span 1;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px hsl(0, 0%, 90%);
+    /* border-top-width: thick; */
+    border-top-style: solid;
+
+    padding: 30px;
+    margin: 20px;
+}
+
+main>div:first-child {
+    grid-row: 2 / 4;
+
+    border-top-color: var(--Cyan);
+}
+
+main>div:nth-child(2) {
+    border-top-color: var(--Red);
+}
+
+main>div:nth-child(3) {
+    border-top-color: var(--Orange);
+}
+
+main>div:last-child {
+    grid-row: -4 / -2;
+
+    border-top-color: var(--Blue);
+}
+
+main>div>img {
+    float: right;
+}
+
+p {
+    font-size: .8rem;
+}
+
+div>p {
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-weight: 600;
+    color: var(--Very-Dark-Blue);
+    font-size: 2em;
+}
+
+h3 {
+    font-weight: 200;
+    color: var(--Very-Dark-Blue);
+    font-size: 1.6em;
+}
+
+h2 {
+    font-weight: 600;
+    color: var(--Very-Dark-Blue);
+    font-size: 1.2em;
+}
+
+@media (max-width: 814px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main>div {
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
